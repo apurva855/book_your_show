@@ -38,7 +38,7 @@ const images=[
     <HeroSlider{...settings}>
     {
       images.map((image)=>(
-        <div className="w-full h-44 md:64 py-3">
+        <div className="w-full h-44 md:68 py-3">
         <img src={image} alt="testing" className="w-full h-full rounded-md" />
         </div>
       ))
