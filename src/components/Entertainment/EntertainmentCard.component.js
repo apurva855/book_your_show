@@ -8,7 +8,7 @@ import Slider from "react-slick"
      <img
         className="w-full h-full rounded-xl"
         src={props.src}
-        alt="Entertainmenet Image"
+        alt="Entertainment Image"
      />
      </div>
      </>

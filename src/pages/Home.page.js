@@ -4,6 +4,9 @@ import  EntertainmentCardSlider from "../components/Entertainment/EntertainmentC
 
 import Premier from "../components/Premier/Premier.component.js";
 
+import PosterSlider from "../components/PosterSlider/PosterSlider.component";
+
+import TempPosters from "../config/TempPosters.config"
 const HomePage = () =>{
   return(
   <>
@@ -22,12 +25,17 @@ The best of Entertainment
    alt="Rupay"
    className="w-full h-full"/>
 </div>
-<Premier />
+<PosterSlider images={TempPosters} title="Premiers" subtitle="Brand New Release Every Friday" isDark />
 </div>
 </div>
 
 </div>
 
+<div className="container mx-auto px-4">
+<PosterSlider images={TempPosters} title="Online Streaming Events"
+isDark={false}/>
+
+</div>
   </>
 );
 };

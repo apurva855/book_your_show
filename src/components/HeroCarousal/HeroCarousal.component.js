@@ -48,7 +48,7 @@ const HeroCarousal = () =>{
       <HeroSlider { ...settingsLg}>
       {
         images.map((image)=>(
-          <div className="w-full h-96 px-2 py-3 gap-2">
+          <div className="w-full h-96 px-2 py-3 ">
           <img src={image} alt="testing " className="w-full h-full rounded-md"/>
           </div>
         ))

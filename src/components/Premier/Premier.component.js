@@ -4,10 +4,10 @@ import Slider from "react-slick";
 //component
 import Poster from "../Poster/Poster.component";
 
-//component settings
+//component settings for carousal
 import settings from "../../config/PosterCarousal.config";
 
-//component /PremierImages
+//component PremierImages
 import PremierImages from "../../config/TempPosters.config";
 
  const Premier = () => {
@@ -15,7 +15,7 @@ import PremierImages from "../../config/TempPosters.config";
 
   return (
     <>
-    <div>
+    <div className="flex flex-col items-start py-4">>
     <h3 className="text-white text-xl font bold">Premiers</h3>
     <p className="text-white text-sm mb-1">Brand new release every Friday</p>
     </div>
