@@ -34,7 +34,11 @@ The best of Entertainment
 <div className="container mx-auto px-4">
 <PosterSlider images={TempPosters} title="Online Streaming Events"
 isDark={false}/>
+</div>
 
+<div className="container mx-auto px-4">
+<PosterSlider images={TempPosters} title="Outdoor Events"
+isDark={false}/>
 </div>
   </>
 );
