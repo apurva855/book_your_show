@@ -1,13 +1,23 @@
-import React from "react";
-
+import React,{useState,useEffect} from "react";
+import axios from "axios";
 import  EntertainmentCardSlider from "../components/Entertainment/EntertainmentCard.component";
-
 import Premier from "../components/Premier/Premier.component.js";
-
 import PosterSlider from "../components/PosterSlider/PosterSlider.component";
+import TempPosters from "../config/TempPosters.config";
 
-import TempPosters from "../config/TempPosters.config"
-const HomePage = () =>{
+const HomePage = () => {
+
+const [popularMovies, setPopularMovies] = useState([]);
+
+useEffect(() => {
+  const requestPopularMovies = async () => {
+    const getPopularMovies = await axios.get("/movie/popular");
+    setPopularMovies(getPopularMovies.data.results);
+  };
+  requestPopularMovies();
+},[]);
+
+console.log({popularMovies});
   return(
   <>
 <div className="flex flex-col gap-10">
@@ -25,7 +35,7 @@ The best of Entertainment
    alt="Rupay"
    className="w-full h-full"/>
 </div>
-<PosterSlider images={TempPosters} title="Premiers" subtitle="Brand New Release Every Friday" isDark />
+<PosterSlider images={popularMovies} title="Premiers" subtitle="Brand New Release Every Friday" isDark />
 </div>
 </div>
 

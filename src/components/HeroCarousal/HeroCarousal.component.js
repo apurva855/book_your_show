@@ -1,18 +1,30 @@
-import React from "react";
-import HeroSlider from "react-slick";
 
+import React, {useState, useEffect} from "react";
+import HeroSlider from "react-slick";
+import axios from "axios";
 //component
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HeroCarousal = () =>{
+  const [images, setImages] = useState([]);
+
+useEffect(() => {
+  const requestNowPlayingMovies = async() => {
+    const getImages = await axios.get("/movie/now_playing");
+    setImages(getImages.data.results);
+  };
+  requestNowPlayingMovies();
+}, []);
+
   const settingsLg = {
     arrows:true,
+    dots:false,
     autoplay:true,
     centerMode:true,
     slidesToShow:1,
     centerPadding:"300px",
-    infinite:true,
+    infinite:true
 
   }
   const settings ={
@@ -20,16 +32,10 @@ const HeroCarousal = () =>{
     dots:true,
     infinite:true,
     speed:500,
-    slidesToShow:1,
+    slidesToShow:1
 
   };
-  const images=[
-    "https://in.bmscdn.com/promotions/cms/creatives/1631561786777_courtroomdramas_1240x300.jpg",
-    "https://in.bmscdn.com/promotions/cms/creatives/1631562943527_gauravkapoorliveevent_promo_webshowcase_1240x300.jpg",
-    "https://in.bmscdn.com/promotions/cms/creatives/1630993174880_rannutsavpromotionalbanners_webshowcase_1240x300.jpg",
-    "https://in.bmscdn.com/promotions/cms/creatives/1628591224466_fnbgeneric.jpg",
-    "https://in.bmscdn.com/promotions/cms/creatives/1631025243018_basteachersdaycampaign_webshowcase_1240x300.jpg"
-  ]
+
   return(
     <>
       <div className="lg:hidden md:block">
@@ -37,7 +43,7 @@ const HeroCarousal = () =>{
       {
         images.map((image)=>(
           <div className="w-full h-64 md:h-60 py-3">
-          <img src={image} alt="testing" className="w-full h-full rounded-md"/>
+          <img src={`https://image.tmdb.org/t/p/original${image.backdrop_path}`} alt="testing" className="w-full h-full rounded-md"/>
           </div>
         ))
       }
@@ -49,7 +55,7 @@ const HeroCarousal = () =>{
       {
         images.map((image)=>(
           <div className="w-full h-96 px-2 py-3 ">
-          <img src={image} alt="testing " className="w-full h-full rounded-md"/>
+          <img src={`https://image.tmdb.org/t/p/original${image.backdrop_path}`} alt="testing " className="w-full h-full rounded-md"/>
           </div>
         ))
       }
