@@ -22,7 +22,7 @@ return (
    <div className="flex items-center w-1/2">
       <div className="w-12 h-8">
          <img
-            src="https://in.bmscdn.com/webin/common/icons/logo.svg"
+            src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png"
             alt="logo"
             className="w-full h-full" />
       </div>

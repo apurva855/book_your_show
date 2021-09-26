@@ -1,6 +1,28 @@
 import React from "react";
 import {BiCameraMovie} from "react-icons/bi";
 import MovieHero from "../components/MovieHero/MovieHero.component";
+import CastCarousalSlider from "../components/MovieHero/CastCarousal";
+import CrewCarousalSlider from "../components/MovieHero/CrewCarousal";
+
+const launchRazorPay = () => {
+ let options = {
+   key: "rzp_test_WgsdhPnGJZJsXK",
+   amount: 500*100,
+   currency: "INR",
+   name: "Book My Show Clone",
+   description: "Movie Purchase on Rental",
+   image: "https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png",
+
+   handler: () => {
+     alert("Payment Done")
+   },
+   theme: {color: "#c4242d"}
+ };
+
+ let rzp = new window.Razorpay(options);
+ rzp.open();
+};
+
 const Movie=()=>{
   return(
     <>
@@ -13,6 +35,23 @@ const Movie=()=>{
    <div className="my-8">
       <hr />
    </div>
+   <div className="my-12 container px-4 md:w-11/12 ">
+
+   <div className="my-8">
+   <h1 className="text-2xl font-bold mx-12">Cast</h1>
+   </div>
+   <CastCarousalSlider  />
+   </div>
+
+   <div className="my-12 container px-4 md:w-11/12 ">
+
+   <div className="my-8">
+   <h1 className="text-2xl font-bold mx-12">Crew</h1></div>
+         <CrewCarousalSlider />
+     </div>
+     <div className="my-8">
+        <hr />
+     </div>
    <div className="flex flex-col items-start gap-3 mx-16">
       <h1 className="text-gray-800 font-bold text-xl">Applicable Offers</h1>
       <div className="flex items-start gap-2 bg-yellow-100 border-yellow-400 border-dashed border-2 rounded-md p-3 w-80">
@@ -25,7 +64,11 @@ const Movie=()=>{
          </div>
       </div>
    </div>
+   <button onClick={launchRazorPay} class=" mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 mx-16 rounded">
+  Book tickets
+</button>
 </div>
+
     </>
   );
 };

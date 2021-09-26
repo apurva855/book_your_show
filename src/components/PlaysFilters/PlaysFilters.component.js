@@ -17,7 +17,7 @@ const PlaysFilter =(props)=> {
           <div className="flex items-center gap-3 ">
           {props.tags.map((tag)=>(
             <>
-            <div className="border-2 border-gray-400 p-1 text-sm">
+            <div className="border-2 border-gray-400 p-0.5 text-sm">
             <span className="text-pink-700">{tag}</span>
             </div>
             </>

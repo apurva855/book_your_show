@@ -42,12 +42,12 @@ The best of Entertainment
 </div>
 
 <div className="container mx-auto px-4">
-<PosterSlider images={TempPosters} title="Online Streaming Events"
+<PosterSlider images={popularMovies} title="Online Streaming Events"
 isDark={false}/>
 </div>
 
 <div className="container mx-auto px-4">
-<PosterSlider images={TempPosters} title="Outdoor Events"
+<PosterSlider images={popularMovies} title="Outdoor Events"
 isDark={false}/>
 </div>
   </>
